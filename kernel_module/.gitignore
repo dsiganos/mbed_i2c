@@ -1,0 +1,10 @@
+.myi2c.ko.cmd
+.myi2c.mod.o.cmd
+.myi2c.o.cmd
+.tmp_versions/
+Module.symvers
+modules.order
+myi2c.ko
+myi2c.mod.c
+myi2c.mod.o
+myi2c.o
