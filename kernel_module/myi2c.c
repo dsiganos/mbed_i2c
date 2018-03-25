@@ -33,9 +33,9 @@ int i2c_test_init(void)
 	i2c_dev = i2c_get_adapter(2);
 	i2c_client = i2c_new_device(i2c_dev, board_info);
 
-	i2c_smbus_write_byte(i2c_client, 0x10);
-	i2c_smbus_read_byte(i2c_client); // Flush first byte
-    i2c_smbus_read_byte(i2c_client);
+	i2c_smbus_write_byte(i2c_client, 65);
+//	i2c_smbus_read_byte(i2c_client); // Flush first byte
+//    i2c_smbus_read_byte(i2c_client);
 
 	return 0;
 }
@@ -43,7 +43,8 @@ int i2c_test_init(void)
 void i2c_test_exit(void)
 {
     printk(KERN_INFO "Goodbye world\n");
-	i2c_unregister_device(i2c_client);
+    i2c_smbus_write_byte(i2c_client, 0);
+    i2c_unregister_device(i2c_client);
 }
 
 module_init(i2c_test_init);
