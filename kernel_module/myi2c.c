@@ -21,7 +21,7 @@ struct i2c_client* i2c_client;
 
 static struct i2c_board_info __initdata board_info[] =  {
 	{
-		I2C_BOARD_INFO("dimitris_i2c", 0x20),
+		I2C_BOARD_INFO("dimitris_i2c", 0x10),
 	}
 };
 
